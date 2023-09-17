@@ -49,6 +49,7 @@ function subEvent(event) {
   let position = localStorage.getItem('position');
   let delay = localStorage.getItem('delay');
   let amount = localStorage.getItem('amount');
+  let timeS = position - delay;
 
   let a = 0;
   setTimeout(() => {
@@ -61,7 +62,7 @@ function subEvent(event) {
           .catch((position, delay) => {});
       }
     }, delay);
-  }, position);
+  }, timeS);
   submitButton.disabled = true;
   localStorage.clear();
   formForm.reset();
